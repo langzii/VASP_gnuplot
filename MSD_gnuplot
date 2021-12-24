@@ -1,0 +1,8 @@
+#!/bin/bash
+gnuplot -persist <<EOF
+set terminal pdfcairo enhanced color size 8, 6 linewidth 3 font 'Times, 28'
+set output "MSD.pdf"
+set key left
+set xlabel "Timestep(0.5fs)";set ylabel "Mean square displacement"
+plot "MSD-1.out" using 1:2 with line linewidth 1  title "H","MSD-2.out" using 1:2 with line linewidth 1  title "Li"
+EOF
