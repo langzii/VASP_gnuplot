@@ -1,0 +1,1 @@
+awk '/Direct configuration/{x=NR+64;next}(NR<=x){print}' XDATCAR >POSCAR1
